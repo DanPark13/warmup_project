@@ -19,18 +19,48 @@ class DriveSquareNode(Node):
     def run_loop(self):
         msg = Twist()
         current_time = self.get_clock().now().nanoseconds
-        delta_time = (current_time - self.start_timestamp) * (10 ** -9)
-        print(delta_time)
+        delta = (current_time - self.start_timestamp) * (10 ** -9)
+        print(delta)
 
-        msg.linear.x = 0.2
-
-        if delta_time > 5:
-            msg.linear.x = 0.0
-        
-        msg.angular.z = 0.475
-
-        if delta_time > 10:
+        # Forwards
+        if delta < 5:
+            msg.linear.x = 0.3
             msg.angular.z = 0.0
+        
+        # Turns Left
+        elif delta < 10.5:
+            msg.linear.x = 0.0
+            msg.angular.z  = 0.3
+        
+        # Forwards again
+        elif delta < 15.5: 
+            msg.linear.x = 0.3
+            msg.angular.z = 0.0
+
+        # Turns Left
+        elif delta < 21:
+            msg.linear.x = 0.0
+            msg.angular.z = 0.3
+        
+        # Forwards
+        elif delta < 26:
+            msg.linear.x = 0.3
+            msg.angular.z = 0.0
+        
+        # Turns Left
+        elif delta < 31.5:
+            msg.linear.x = 0.0
+            msg.angular.z = 0.3
+        
+        # Forwards
+        elif delta < 36.5:
+            msg.linear.x = 0.3
+            msg.angular.z = 0.0
+        
+        # Turns Left
+        elif delta < 42:
+            msg.linear.x = 0.0
+            msg.angular.z = 0.3
 
         self.publisher.publish(msg)
 
