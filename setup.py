@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'tele_op = warmup_project.tele_op:main'
+            'tele_op = warmup_project.tele_op:main',
+            'marker_sample = warmup_project.marker_sample:main'
         ],
     },
 )

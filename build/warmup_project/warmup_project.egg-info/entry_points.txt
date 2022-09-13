@@ -1,0 +1,4 @@
+[console_scripts]
+marker_sample = warmup_project.marker_sample:main
+tele_op = warmup_project.tele_op:main
+
