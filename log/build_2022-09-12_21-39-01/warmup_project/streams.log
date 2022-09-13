@@ -1,0 +1,19 @@
+[0.612s] Invoking command in '/home/deep13/ros2_ws/src/warmup_project/build/warmup_project': PYTHONPATH=/home/deep13/ros2_ws/src/warmup_project/install/warmup_project/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/deep13/ros2_ws/src/warmup_project/install/warmup_project --editable --build-directory /home/deep13/ros2_ws/src/warmup_project/build/warmup_project/build --no-deps install_data --install-dir /home/deep13/ros2_ws/src/warmup_project/install/warmup_project
+[0.834s] running develop
+[0.963s] running egg_info
+[0.963s] writing warmup_project.egg-info/PKG-INFO
+[0.963s] writing dependency_links to warmup_project.egg-info/dependency_links.txt
+[0.963s] writing entry points to warmup_project.egg-info/entry_points.txt
+[0.964s] writing requirements to warmup_project.egg-info/requires.txt
+[0.964s] writing top-level names to warmup_project.egg-info/top_level.txt
+[0.994s] reading manifest file 'warmup_project.egg-info/SOURCES.txt'
+[0.995s] writing manifest file 'warmup_project.egg-info/SOURCES.txt'
+[1.025s] running build_ext
+[1.025s] Creating /home/deep13/ros2_ws/src/warmup_project/install/warmup_project/lib/python3.8/site-packages/warmup-project.egg-link (link to .)
+[1.026s] Installing emergency_stop script to /home/deep13/ros2_ws/src/warmup_project/install/warmup_project/lib/warmup_project
+[1.027s] Installing marker_sample script to /home/deep13/ros2_ws/src/warmup_project/install/warmup_project/lib/warmup_project
+[1.027s] Installing tele_op script to /home/deep13/ros2_ws/src/warmup_project/install/warmup_project/lib/warmup_project
+[1.027s] 
+[1.027s] Installed /home/deep13/ros2_ws/src/warmup_project/build/warmup_project
+[1.027s] running install_data
+[1.050s] Invoked command in '/home/deep13/ros2_ws/src/warmup_project/build/warmup_project' returned '0': PYTHONPATH=/home/deep13/ros2_ws/src/warmup_project/install/warmup_project/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/deep13/ros2_ws/src/warmup_project/install/warmup_project --editable --build-directory /home/deep13/ros2_ws/src/warmup_project/build/warmup_project/build --no-deps install_data --install-dir /home/deep13/ros2_ws/src/warmup_project/install/warmup_project

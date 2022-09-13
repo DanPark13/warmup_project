@@ -1,0 +1,5 @@
+[console_scripts]
+emergency_stop = warmup_project.emergency_stop:main
+marker_sample = warmup_project.marker_sample:main
+tele_op = warmup_project.tele_op:main
+
