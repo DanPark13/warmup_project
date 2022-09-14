@@ -3,9 +3,9 @@ from rclpy.node import Node
 from std_msgs.msg import String
 from geometry_msgs.msg import Twist, Vector3 # Neato control Messages
 
-class (Node):
+class WallFollowerNode(Node):
     def __init__(self):
-        super().__init__("publisher_node")
+        super().__init__("wall_follower_node")
 
         timer_period = 0.1
         self.timer = self.create_timer(timer_period, self.send_msg)
