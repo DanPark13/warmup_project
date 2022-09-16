@@ -25,13 +25,13 @@ class TeleopNode(Node):
                 msg.linear.x = lin_speed
                 msg.angular.z = 0.0
             elif key == '\x61': # a
-                msg.linear.x = lin_speed
+                msg.linear.x = 0.0
                 msg.angular.z = 1.0
             elif key == '\x73': # s
                 msg.linear.x = -lin_speed
                 msg.angular.z = 0.0
             elif key == '\x64': # d
-                msg.linear.x = lin_speed
+                msg.linear.x = 0.0
                 msg.angular.z = -1.0
             elif key == '\x20':
                 msg.linear.x = 0.0
