@@ -1,5 +1,7 @@
 # How to View rosbags
 
+## Install the Bag
+
 ## Running the Bag
 
 `ros2 bag <PATH_TO_FOLDER>`
