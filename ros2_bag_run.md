@@ -1,5 +1,7 @@
 # How to View rosbags
 
+## Install the Bag
+
 ## Running the Bag
 
 `ros2 bag <PATH_TO_FOLDER>`
@@ -7,7 +9,7 @@ example: `ros2 bag play bags/drive-square`
 
 ## rviz
 
-Run `rvis2`
+Run `rviz2`
 
 1. Add LaserScan topic
 2. RobotModel

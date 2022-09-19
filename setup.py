@@ -23,6 +23,12 @@ setup(
             'teleop = warmup_project.teleop:main',
             'marker_sample = warmup_project.marker_sample:main',
             'drive_square = warmup_project.drive_square:main',
+            'wall_follower = warmup_project.wall_follower:main',
+            'wall_marker = warmup_project.wall_marker:main',
+            'person_follower = warmup_project.person_follower:main',
+            'range_plotter = warmup_project.range_plotter:main',
+            'test_person_follower = warmup_project.test_person_follower:main',
+            'position_plotter = warmup_project.position_plotter:main'
         ],
     },
 )
