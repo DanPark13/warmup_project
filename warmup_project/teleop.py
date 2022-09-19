@@ -17,7 +17,8 @@ class TeleopNode(Node):
 
     def process_key(self, key, settings):
         msg = Twist()
-        lin_speed = 0.5
+        lin_speed = 0.2
+        ang_speed = 0.1
         while key != '\x03':
             key = self.getKey(settings)
             print(key)
@@ -26,13 +27,13 @@ class TeleopNode(Node):
                 msg.angular.z = 0.0
             elif key == '\x61': # a
                 msg.linear.x = 0.0
-                msg.angular.z = 1.0
+                msg.angular.z = ang_speed
             elif key == '\x73': # s
                 msg.linear.x = -lin_speed
                 msg.angular.z = 0.0
             elif key == '\x64': # d
                 msg.linear.x = 0.0
-                msg.angular.z = -1.0
+                msg.angular.z = -ang_speed
             elif key == '\x20':
                 msg.linear.x = 0.0
                 msg.angular.z = 0.0
