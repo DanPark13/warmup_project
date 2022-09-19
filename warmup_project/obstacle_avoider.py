@@ -6,6 +6,7 @@ from std_msgs.msg import String
 from geometry_msgs.msg import Twist, Vector3 # Neato control Messages
 from sensor_msgs.msg import LaserScan
 from statistics import mean
+from nav_msgs.msg import Odometry
 
 class ObstacleAvoiderNode(Node):
     def __init__(self):
@@ -13,9 +14,11 @@ class ObstacleAvoiderNode(Node):
 
         self.vel_pub = self.create_publisher(Twist, "cmd_vel", 10)
         self.scan_sub = self.create_subscription(LaserScan, 'scan', self.process_scan, 10)
+        self.odom_sub = self.create_subscription(Odometry, 'odom', self. process_odom, 10)
     
     def process_scan(self, msg): # look for clusters
-        # front angle is zero degrees, left is 90, right is 270   
+        # front angle is zero degrees, left is 90, right is 270 
+        #  
         ranges = msg.ranges
         angles = range(len(msg.ranges))
         clusters = {} # will hold the angles at the centers of each cluster as the keys, and the 
