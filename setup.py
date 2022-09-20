@@ -28,7 +28,8 @@ setup(
             'person_follower = warmup_project.person_follower:main',
             'range_plotter = warmup_project.range_plotter:main',
             'test_person_follower = warmup_project.test_person_follower:main',
-            'position_plotter = warmup_project.position_plotter:main'
+            'position_plotter = warmup_project.position_plotter:main',
+            'obstacle_avoider = warmup_project.obstacle_avoider:main'
         ],
     },
 )

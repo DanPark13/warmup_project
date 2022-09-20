@@ -18,7 +18,7 @@ class TeleopNode(Node):
     def process_key(self, key, settings):
         msg = Twist()
         lin_speed = 0.2
-        ang_speed = 0.1
+        ang_speed = 0.5
         while key != '\x03':
             key = self.getKey(settings)
             print(key)
