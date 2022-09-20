@@ -29,7 +29,8 @@ setup(
             'range_plotter = warmup_project.range_plotter:main',
             'test_person_follower = warmup_project.test_person_follower:main',
             'position_plotter = warmup_project.position_plotter:main',
-            'finite_state_control = warmup_project.finite_state_control:main'
+            'finite_state_control = warmup_project.finite_state_control:main',
+            'obstacle_avoider = warmup_project.obstacle_avoider:main'
         ],
     },
 )
