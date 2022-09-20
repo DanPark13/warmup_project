@@ -28,7 +28,7 @@ class WallVisualizationPublisher(Node):
         marker.pose.orientation.y = 0.0
         marker.pose.orientation.z = 0.0
         marker.pose.orientation.w = 1.0
-        marker.points = 
+        marker.points = ()
         marker.scale.x = 1.0
         marker.scale.y = 1.0
         marker.scale.z = 1.0
