@@ -42,7 +42,7 @@ class WallVisualizationPublisher(Node):
 def main(args=None):
     rclpy.init(args=args)
 
-    wall_visualization_publisher = SimpleVisualizationPublisher()
+    wall_visualization_publisher = WallVisualizationPublisher()
 
     rclpy.spin(wall_visualization_publisher)
 
