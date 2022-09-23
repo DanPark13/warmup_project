@@ -32,7 +32,19 @@ In order to do this, we utilized the scan ROS topic to detect walls by looking f
 
 ### Person Following
 
+The robot's person-following behavior enables it to follow a person, specifically their feet, when that person is within their scan sensor's range. We further specified the robots behavior so that its linear speed would be proportional to its distance to an an dividual. For example, as the robot gets closer to the object it is tracking, it would move slower and slower so that it would not collide with the person.
+
+![Person Following](images/person-following.png)
+
+As shown in the figure above, we implemented this behavior by looking for clusters, groups of non-zero scans indicating an object is within range. For each cluster the center angle and its range were recorded in arrays. The center angle with the smallest range, meaning its cluster is the closest would then become the heading of the robot. If the heading was on the right side of the robot, the robot would turn right, and vice versa for the left. We originally made the angular speed of the robot proportional to how far the new heading of the robot is different from the current one such that the smaller the change in heading the lower the speed. However, this caused the robot to lag behind the person it was following which then made it vulnerable to detecting closer objects that are not people, so its angular speed was constant at 1.0.
+
+Another issue we found was that when following a person, if the robot passed too close to another object and that object became the same distance from or closer to the robot than the person, it would become confused and often start following that random objet ratehr than the person. To try to fix this, we began to also take into account the clusters that sandwich whatever the closest cluster was in hopes of finding that one of them was very close to the cluster in question. If it was, that mean that that other cluster was probably the other foot of the person. With that, we had hoped that the robot would only follow pairs of clusters that are within 5 degrees of each other (which indicates a pair of feet) even if their is a single large cluster that is closer. When implemented, this strategy worked okay, sometimes the robot would ignore the non-human object and sometimes it didn't. Since it didn't worsen the robot's performance so we decided to keep it.
+
 ### Obstacle Avoidance
+
+![Obstacle Avoidance](images/obstacle-avoidance.png)
+
+For obstacle avoidance, the robot needed to move around while avoiding and not bumping into obstacles, moving or otherwise. To make this happen we used the same cluster strategy described under **Person Following** and looked for the closest cluster, however this time, as shown in the above figure, instead of turning towards that cluster, the robot turned in the opposite direction away from the object. We also used proportional control on both the linear and angular velocity this time, so that the closer the obstacle, the more the robot would slow down but the faster it turned away in order to avoid it.
 
 ### Finite State Control
 
