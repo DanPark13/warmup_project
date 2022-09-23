@@ -42,9 +42,13 @@ To combine in two behaviors, we decided to combine spinning and person following
 
 The state transition diagram demonstrates one flow moving to another. When the robot is spinning around, it is actively looking for an object to follow. If it sees an object in front of it, the robot will follow it as in **Person Following**. If the robot loses sight of the object in front of it, it will return to its default behavior of spinning around.
 
-## Improvements and Finishing Remarks
+## Code Structure
 
-If we had more time, we would like to go above and beyond early to at least attempt the instructions in the *Go Beyond* sections. However, due to our time conflicts and commitments with other activities, we weren't able to. A lot of the content in the *Go Beyond* sections are fascinating, and something we would love to learn when delving into computational robotics.
+The code for our implementations above are grouped by classes with names of their behaviors. (**Person Following** -> *person_following.py*) Within each class, there is a `main` function that creates the class Node object which defines all our behavior. In extension, the `main` function gets called within the file to the `__name__` attribute for the robot to compile. For example **Wall Following** has a node called `WallFollowerNode` that defines all the behavior and called in the `main` function as a class object and processed through `rcipy`, the ROS Python compiler.
+
+## Challenges, Improvements, and Finishing Remarks
+
+If we had more time, we would like to go above and beyond early to at least attempt the instructions in the *Go Beyond* sections. However, due to our time conflicts and commitments with other activities, we weren't able to get ahead as early as we would have liked. A lot of the content in the *Go Beyond* sections are fascinating, and something we would love to learn when delving into computational robotics. In the future, we would like to get ahead as early as possible, hit any roadblocks which we can then solve with the CAs and Paul, and go in depth of the *Go Beyond* sections to learn more about what ROS can accomplish.
 
 To help alleviate that, we should have taken advantage of the robot odometry readings and also wrote helper functions to restructure our code. For the odometry readings, a lot of the content echoed from the odometry ROS topic had a lot of readings on headings, angles, speeds, and distance that would have been extremely useful for some of our implementations. For example, instead of using time to do the **Drive Square** behavior and be a victim to the variable nature of the MAC carpet floor, we should have learned more about taking advantage of those readings, something we eventually did in **Person Following** and **Obstacle Avoidance**, to make a more stable drive. 
 

@@ -22,20 +22,10 @@ class WallFollowerNode(Node):
         left_angles = [90 - 2*angle_diff, 90 - angle_diff, 90 + angle_diff, 90  + 2*angle_diff]
         left_ranges = [ranges[90 - 2*angle_diff], ranges[90 - angle_diff], ranges[90 + angle_diff], ranges[90 + 2*angle_diff]]
         print(left_ranges)
-        # x_values = list(np.multiply((np.cos(left_angles)), left_ranges))
-        # y_values = list(np.multiply((np.sin(left_angles)), left_ranges))
         #print(y_values)
         slopes = []
         for i in range(len(left_ranges) - 1):
-            #slopes.append(((y_values[i+1] - y_values[i]) / (x_values[i+1] - x_values[i])))
             slopes.append(((left_ranges[i+1] - left_ranges[i])))
-        # mean_of_slopes = np.average(slopes)
-        #print(slopes)
-        #print("mean of sopes: " + mean_of_slopes)
-        # difference_slopes = [np.abs(slopes - mean_of_slopes) for slope in slopes]
-        # difference_slopes = np.array(difference_slopes).tolist()
-        # difference_slopes = difference_slopes[0]
-        #print(difference_slopes)
         threshold_value = 0.5
         msg = Twist()
         wall_distance = 0.75
@@ -64,17 +54,11 @@ class WallFollowerNode(Node):
 
         self.vel_pub.publish(msg)
 
-
-
-
-
 def main(args=None):
     rclpy.init(args=args) # initializes ROS connection
     node = WallFollowerNode() # create node of type Wall Follower
     rclpy.spin(node) # keeps the node from 'dying', nodes usually stop after doing their job once
     rclpy.shutdown()
-
-
 
 if __name__ == '__main__':
     main()
